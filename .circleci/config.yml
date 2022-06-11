@@ -20,23 +20,9 @@ jobs:
       - checkout
       - run: echo "A more familiar hi"
       - run: sleep 15
- workflows: 
+workflows: 
     version: 2
     one_and_two:
       jobs:
         - one
         - two
-orbs: 
-  node: circleci/node@4.7.0
-jobs: 
-  build: 
-    executor: 
-      name: node/default
-      tag: '10.4'
-    steps: 
-      - checkout
-      - node/with-cache:
-           steps: 
-             - run: npm install
-      - run: npm run test
- 
